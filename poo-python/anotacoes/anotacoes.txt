@@ -1,0 +1,37 @@
+Python POO
+
+Python usa Programação Orientada a Objetos para modelar dados e comportamentos em classes e objetos.
+
+Conceitos principais:
+- classe: define um tipo de objeto com atributos e metodos.
+- objeto: instancia de uma classe.
+- herança: permite criar classes especializadas a partir de uma classe base.
+- encapsulamento: controla acesso a dados usando atributos e metodos.
+- polimorfismo: mesma interface, comportamentos diferentes.
+
+Exemplo simples:
+class Animal:
+    def __init__(self, nome):
+        self.nome = nome
+
+    def falar(self):
+        raise NotImplementedError("Subclasses devem implementar falar()")
+
+class Cachorro(Animal):
+    def falar(self):
+        return f"{self.nome} diz: Au au!"
+
+class Gato(Animal):
+    def falar(self):
+        return f"{self.nome} diz: Miau!"
+
+pets = [Cachorro("Rex"), Gato("Mimi")]
+
+for pet in pets:
+    print(pet.falar())
+
+O que isso mostra:
+- Animal � a classe base.
+- Cachorro e Gato herdam de Animal.
+- Cada subclass define seu pr�prio falar().
+- Ao iterar, o codigo usa polimorfismo: o mesmo metodo chama comportamentos diferentes.
